@@ -14,6 +14,7 @@ public class KrampusAI : MonoBehaviour
         Lurking , Breaching , Attacking , Searching , Retreating
     }
     public AIstates NowState = AIstates.Lurking;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -41,7 +42,6 @@ public class KrampusAI : MonoBehaviour
     IEnumerator LurkRoutine()
     {
         agent.areaMask = OutsideMask;
-
         agent.SetDestination(new Vector3(56,2,-21)); //Mudar pra aleatorizar pontos escolhidos dentro da Navmesh
         yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance < 0.5f);
         yield return new WaitForSeconds(2f);
