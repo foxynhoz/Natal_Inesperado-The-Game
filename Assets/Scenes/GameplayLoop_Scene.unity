@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1.23
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.5898006, g: 0.6977976, b: 0.8867924, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2d056ac30ecc9e542b26e06133f23602, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -457,6 +457,46 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
       propertyPath: m_Name
       value: Neighboorhood
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182155238967171264, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.999071
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182155238967171264, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000022289923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182155238967171264, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.04309577
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182155238967171264, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.000000006418075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182155238967171264, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 4.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817300730991222371, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999654
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817300730991222371, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000002222775
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817300730991222371, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0026369086
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817300730991222371, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.000000002500406
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817300730991222371, guid: de9f5751c7e63c44586deab9b3e154b9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.302
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
