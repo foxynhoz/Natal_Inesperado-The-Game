@@ -16,20 +16,23 @@ public class ClickRaycast3D : MonoBehaviour
             if (Physics.Raycast(ray, out hit, range))
             {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                Debug.Log("Cubo clicado: " + hit.collider.name);
 
 
-                if (hit.collider.CompareTag("Cube"))
-                    {
+                if (hit.collider.CompareTag("Toys")) //Task Pegar brinquedos
+                {
+                    Destroy(hit.collider.gameObject);
 
-                    
-
-                    Destroy(hit.collider.gameObject); 
-                    
-
-                    }
-                 
+                }  
+                if(hit.collider.CompareTag("Trash")) //Task Jogar lixo no lixo
+                {
+                    Destroy(hit.collider.gameObject);
                 }
+                if(hit.collider.CompareTag("Dishes")) //Task Pratos
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+
+            }
             
         }
     }
