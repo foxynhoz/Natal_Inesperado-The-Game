@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4270003977377764907}
   - component: {fileID: 3556728546942571652}
   - component: {fileID: 5235061778280550850}
+  - component: {fileID: 6773407719814080092}
   - component: {fileID: 8859319201575562343}
   m_Layer: 0
   m_Name: Main Camera
@@ -154,6 +155,20 @@ MonoBehaviour:
   sensibilidadeY: 2
   minAngulo: -80
   maxAngulo: 80
+--- !u!114 &6773407719814080092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170708060090039836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ca714f7f4415f478370391934da638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickRaycast3D
+  range: 100
+  Task: {fileID: 0}
 --- !u!95 &8859319201575562343
 Animator:
   serializedVersion: 7
