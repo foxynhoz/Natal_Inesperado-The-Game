@@ -21,15 +21,17 @@ public class ClickRaycast3D : MonoBehaviour
                 if (hit.collider.CompareTag("Toys")) //Task Pegar brinquedos
                 {
                     Destroy(hit.collider.gameObject);
-
+                    Task.remainingToys--;
                 }  
                 if(hit.collider.CompareTag("Trash")) //Task Jogar lixo no lixo
                 {
                     Destroy(hit.collider.gameObject);
+                    Task.remainingTrash--;
                 }
                 if(hit.collider.CompareTag("Dishes")) //Task Pratos
                 {
                     Destroy(hit.collider.gameObject);
+                    Task.remainingDishes--;
                 }
 
             }
@@ -37,3 +39,6 @@ public class ClickRaycast3D : MonoBehaviour
         }
     }
 }
+
+// https://youtube.com/shorts/xT5meeMTv6I?si=l0verlFAd8Fmdp6f sound effect toy 
+
