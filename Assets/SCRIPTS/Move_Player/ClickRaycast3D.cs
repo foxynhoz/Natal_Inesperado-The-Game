@@ -33,7 +33,10 @@ public class ClickRaycast3D : MonoBehaviour
                     Destroy(hit.collider.gameObject);
                     Task.remainingDishes--;
                 }
-
+                if(hit.collider.CompareTag("Door")) //Task Fechar porta
+                {
+                    hit.collider.gameObject.SetActive(true);
+                }
             }
             
         }
