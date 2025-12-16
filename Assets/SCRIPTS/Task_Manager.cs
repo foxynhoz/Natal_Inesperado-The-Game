@@ -8,7 +8,7 @@ public class Task_Manager : MonoBehaviour
 
     void Update()
     {
-        if (remainingToys == 0 && remainingDishes == 0 && remainingTrash == 0)
+        if (remainingToys == 0 && remainingDishes == 0 && remainingTrash == 0) //Faz o jogo terminar
         {
 
         }
