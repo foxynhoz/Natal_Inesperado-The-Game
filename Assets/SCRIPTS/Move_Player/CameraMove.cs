@@ -2,31 +2,25 @@ using UnityEngine;
 
 public class CameraMove: MonoBehaviour
 {
-    [SerializeField] GameObject Player;
-    public bool travarMouse = true; //Controla se o cursor do mouse é exibido
-    public float sensibilidade = 2.0f; //Controla a sensibilidade do mouse
-    public float minAnguloY = -90f;  // Limite inferior (ex: não olhar abaixo)
-    public float maxAnguloY = 90f;   // Limite superior (ex: não olhar acima)
-    private float mouseX = 0.0f, mouseY = 0.0f; //Controla a rotação do mouse
+
+    public float sensibilidadeY = 2f;
+    public float minAngulo = -80f, maxAngulo = 80f;
+    float rotX = 0f;
+
+    bool travarMouse = true;
 
     void Start()
     {
         if (!travarMouse)
             return;
-
-
         Cursor.visible = false; //Oculta o cursor do mouse
         Cursor.lockState = CursorLockMode.Locked; //Trava o cursor no centro
-
-
     }
     void Update()
     {
-        mouseX += Input.GetAxis("Mouse X") * sensibilidade; // Incrementa o valor do eixo X
-        mouseY -= Input.GetAxis("Mouse Y") * sensibilidade; // Incrementa o valor do eixo Y (inverte para naturalidade)
-        mouseY = Mathf.Clamp(mouseY, minAnguloY, maxAnguloY);  // Trava o ângulo Y
-        transform.eulerAngles = new Vector3(mouseY, mouseX, 0); //Aplica a rotação
-        transform.position = Player.transform.position; //Mantém a câmera na posição do jogador
-
+        rotX -= Input.GetAxis("Mouse Y") * sensibilidadeY;
+        rotX = Mathf.Clamp(rotX, minAngulo, maxAngulo);
+        transform.localRotation = Quaternion.Euler(rotX, 0f, 0f);
     }
+
 }
