@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     public float sensibilidadeX = 2f;
     float rotY = 0f;
     
+    public Animator animator;
 
     Vector3 velocity;
 
@@ -20,10 +21,14 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 4f;
+            animator.speed = 2f;
+            
         }
         else
         {
             speed = 2f;
+            animator.speed = 1f;
+            
         }
 
 
@@ -38,10 +43,19 @@ public class PlayerMove : MonoBehaviour
         rotY += Input.GetAxis("Mouse X") * sensibilidadeX;
         transform.rotation = Quaternion.Euler(0f, rotY, 0f);
 
+        if (z != 0)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+        /*
         if (Input.GetKeyDown(KeyCode.E))
         {
             lanterna();
-        }
+        }*/
     }
 
 
