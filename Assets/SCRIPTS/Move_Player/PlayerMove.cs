@@ -45,6 +45,7 @@ public class PlayerMove : MonoBehaviour
 
         if (z != 0)
         {
+
             animator.SetBool("isWalking", true);
         }
         else
