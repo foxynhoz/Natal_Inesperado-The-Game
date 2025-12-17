@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public bool isHidden = false;
 
     public CharacterController controller;
-    public float speed = 2f;
+    public float speed = 1f;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     public float sensibilidadeX = 2f;
@@ -24,13 +24,13 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 4f;
+            speed = 3f;
             animator.speed = 2f;
             
         }
         else
         {
-            speed = 2f;
+            speed = 1.5f;
             animator.speed = 1f;
             
         }

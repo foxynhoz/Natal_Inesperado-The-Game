@@ -4,7 +4,6 @@ public class ClickRaycast3D : MonoBehaviour
 {
     public float range = 100f;   // Distância máxima do raio
     [SerializeField] public Task_Manager Task; 
-
     [SerializeField] GameObject Hand;
     [SerializeField] public GameObject heldOBJ = null;
 
