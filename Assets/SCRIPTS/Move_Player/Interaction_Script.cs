@@ -28,7 +28,7 @@ public class Interaction_Script : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.blue);
         
 
-            if (Physics.Raycast(ray, out hit, 1, interactableLayer))
+            if (Physics.Raycast(ray, out hit, 1, interactableLayer) && heldOBJ == null)
             {
                 interactionText.text = "Press [E] to Interact";
                 interactionText.gameObject.SetActive(true);
@@ -101,12 +101,19 @@ public class Interaction_Script : MonoBehaviour
                         interactionText.gameObject.SetActive(true);
                         interactionText.text = "Cleaning Dishes...";
                     }
-                    /*
-                    if (hit.collider.CompareTag("Dishes")) //Task Pratos
+                    
+                    if (hit.collider.CompareTag("Trash")) //Task Pratos
                     {
-                        Destroy(hit.collider.gameObject);
-                        Task.remainingDishes--;
+                        if (heldOBJ == null)
+                        {
+                            Debug.Log("Segurou");
+                            heldOBJ = hit.collider.attachedRigidbody.gameObject;
+                            heldOBJ.transform.position = Hand.transform.position;
+                            heldOBJ.transform.SetParent(Hand.transform.parent, true);
+                            heldOBJ.GetComponent<Rigidbody>().isKinematic = true;
+                        }
                     }
+                    /*
                     if (hit.collider.CompareTag("Door")) //Task Fechar porta
                     {
                         hit.collider.gameObject.SetActive(true);

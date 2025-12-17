@@ -9,6 +9,7 @@ TagManager:
   - HideSpot
   - Interactable
   - Dishes
+  - Trash
   layers:
   - Default
   - TransparentFX
