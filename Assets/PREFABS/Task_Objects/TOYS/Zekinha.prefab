@@ -65,6 +65,10 @@ PrefabInstance:
       value: Zekinha
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 420e60c1e42e8f0418c65547126e31f4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 420e60c1e42e8f0418c65547126e31f4, type: 3}
       propertyPath: m_TagString
       value: Toys
       objectReference: {fileID: 0}
