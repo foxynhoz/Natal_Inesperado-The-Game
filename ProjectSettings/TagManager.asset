@@ -7,6 +7,8 @@ TagManager:
   - BreachPoint
   - Toys
   - HideSpot
+  - Interactable
+  - Dishes
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Interactable
   - 
   - 
   - 

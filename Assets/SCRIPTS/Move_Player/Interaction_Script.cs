@@ -95,12 +95,13 @@ public class Interaction_Script : MonoBehaviour
                         }
 
                     }
-                    /*
-                    if (hit.collider.CompareTag("Trash")) //Task Jogar lixo no lixo
+                    
+                    if (hit.collider.CompareTag("Dishes")) //Task Jogar lixo no lixo
                     {
-                        Destroy(hit.collider.gameObject);
-                        Task.remainingTrash--;
+                        interactionText.gameObject.SetActive(true);
+                        interactionText.text = "Cleaning Dishes...";
                     }
+                    /*
                     if (hit.collider.CompareTag("Dishes")) //Task Pratos
                     {
                         Destroy(hit.collider.gameObject);
