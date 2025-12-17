@@ -23,8 +23,8 @@ public class DEBUG_UI_Script : MonoBehaviour
             "\nKrampusPos: " + Krampus.transform.position +
             "\n\n====STATES====\n\n" +
             "Krampus State: " + Krampus.GetComponent<KrampusAI>().NowState.ToString() +
-            "\nPlayer is Hidden: " + Player.GetComponent<PlayerMove>().isHidden +
-            "\nPlayer is holding: " + Camera.main.GetComponent<ClickRaycast3D>().heldOBJ +
+            "\nPlayer is Hidden: " + Camera.main.GetComponent<Interaction_Script>().isHidden +
+            "\nPlayer is holding: " + Camera.main.GetComponent<Interaction_Script>().heldOBJ +
             "\n\n====VARIABLES====\n\n" +
             "Remaining Toys: " + TaskManager.remainingToys +
             "\nRemaining Trash: " + TaskManager.remainingTrash +

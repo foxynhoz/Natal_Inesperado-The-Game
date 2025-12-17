@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BreachPoint
   - Toys
+  - HideSpot
   layers:
   - Default
   - TransparentFX

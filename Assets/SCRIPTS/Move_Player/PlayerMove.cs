@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
     public bool Light = false;
 
     public Animator animator;
-    public bool isHidden = false;
+    
 
     public CharacterController controller;
     public float speed = 1f;
@@ -14,28 +14,45 @@ public class PlayerMove : MonoBehaviour
     public float jumpHeight = 2f;
     public float sensibilidadeX = 2f;
     float rotY = 0f;
-    
+    Camera cam;
+    Interaction_Script Interaction_Script;
     
 
     Vector3 velocity;
-
+    private void Start()
+    {
+        cam = Camera.main;
+        Interaction_Script = Camera.main.GetComponent<Interaction_Script>();
+    }
 
     void Update()
+    {
+        camMove();
+
+        if(!Interaction_Script.isHidden)
+        {
+            MoveF();
+        }
+            
+        /*
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            lanterna();
+        }*/
+    }
+    void MoveF()
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = 3f;
             animator.speed = 2f;
-            
+
         }
         else
         {
             speed = 1.5f;
             animator.speed = 1f;
-            
         }
-
-
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
@@ -44,9 +61,17 @@ public class PlayerMove : MonoBehaviour
         // Gravidade
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        AnimationControl(z);
+    }
+
+    void camMove()
+    {
         rotY += Input.GetAxis("Mouse X") * sensibilidadeX;
         transform.rotation = Quaternion.Euler(0f, rotY, 0f);
-
+    }
+    void AnimationControl(float z)
+    {
         if (z != 0)
         {
 
@@ -56,13 +81,7 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            lanterna();
-        }*/
     }
-
 
     public void lanterna()
     {

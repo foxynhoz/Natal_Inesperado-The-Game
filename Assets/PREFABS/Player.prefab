@@ -169,6 +169,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClickRaycast3D
   range: 100
   Task: {fileID: 0}
+  Hand: {fileID: 0}
+  heldOBJ: {fileID: 0}
+  Player: {fileID: 3929524392398833430}
+  isHidden: 0
+  hideOffset: {x: 0, y: 0, z: 0}
 --- !u!95 &8859319201575562343
 Animator:
   serializedVersion: 7
@@ -322,12 +327,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   flashlight: {fileID: 0}
   Light: 0
+  animator: {fileID: 8859319201575562343}
   controller: {fileID: 4546613444872537401}
   speed: 2
   gravity: -9.81
   jumpHeight: 2
   sensibilidadeX: 2
-  animator: {fileID: 8859319201575562343}
 --- !u!143 &4546613444872537401
 CharacterController:
   m_ObjectHideFlags: 0
