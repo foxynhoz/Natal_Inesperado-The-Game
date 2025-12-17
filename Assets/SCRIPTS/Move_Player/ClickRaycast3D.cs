@@ -6,7 +6,7 @@ public class ClickRaycast3D : MonoBehaviour
     [SerializeField] public Task_Manager Task; 
 
     [SerializeField] GameObject Hand;
-    [SerializeField] GameObject heldOBJ = null;
+    [SerializeField] public GameObject heldOBJ = null;
 
     void Update()
     {
@@ -20,6 +20,7 @@ public class ClickRaycast3D : MonoBehaviour
                 heldOBJ.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward*3,ForceMode.Impulse);
                 heldOBJ = null;
             }
+
             if (heldOBJ == null) //Nao ta segurando nada
             {
                 Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);

@@ -4,6 +4,10 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] GameObject flashlight;
     public bool Light = false;
+
+    public Animator animator;
+    public bool isHidden = false;
+
     public CharacterController controller;
     public float speed = 2f;
     public float gravity = -9.81f;
@@ -11,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     public float sensibilidadeX = 2f;
     float rotY = 0f;
     
-    public Animator animator;
+    
 
     Vector3 velocity;
 
