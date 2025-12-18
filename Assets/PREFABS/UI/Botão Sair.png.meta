@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 89bd7a763c4063e448f1233de06afc0e
+guid: 6baa0797423ac5a40a81ed54d966bc5b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,23 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Final Bom_0
+      name: "Bot\xE3o Sair_0"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 90
         y: 0
-        width: 197
-        height: 105
+        width: 963
+        height: 302
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac4a972372ab20c4a8b80a63df861cb4
-      internalID: 15717970
+      spriteID: d5717a4c4a252ec4c8ea55450f74fd8a
+      internalID: -1788088831
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6014eaa2f1b3d2e48811dd880cec42be
+    spriteID: 49e4cff35d8b4b5458fb47a8e331fc76
     internalID: 0
     vertices: []
     indices: 
@@ -130,13 +130,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceOnImport
-        value: True
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Final Bom_0: 15717970
+      "Bot\xE3o Sair_0": -1788088831
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

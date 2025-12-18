@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Linq;
 using Unity.Transforms;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class KrampusAI : MonoBehaviour
 
@@ -35,7 +37,14 @@ public class KrampusAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Vector3.Distance(transform.position, Player.transform.position) < 1)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            Debug.Log("Gameover");
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     void RoutineManager()
@@ -149,6 +158,8 @@ public class KrampusAI : MonoBehaviour
         StopCoroutine(AttackingRoutine());
         RoutineManager();
     }
+
+
     private void OnTriggerEnter(Collider other) 
     {
             if(other.name == "Player" && NowState == AIstates.Searching && !isHidden)
@@ -159,6 +170,8 @@ public class KrampusAI : MonoBehaviour
                 RoutineManager();
             }
     }
+
+    
     public bool Raycasting2Player(Collider other)
     {
         Ray ray = new Ray(transform.localPosition, other.transform.localPosition);

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 89bd7a763c4063e448f1233de06afc0e
+guid: 25133467452f3ea4ba48bed29ccbcd61
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Final Bom_0
+      name: "Bot\xE3o Iniciar_1"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 197
-        height: 105
+        x: 15
+        y: 46
+        width: 1324
+        height: 231
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac4a972372ab20c4a8b80a63df861cb4
-      internalID: 15717970
+      spriteID: 67ab43ec3c160ad4d9f6bd56d20b9f79
+      internalID: 2093113881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Bot\xE3o Iniciar_2"
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 253
+        width: 47
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7d3b51da26fdd47a9ece784234a587
+      internalID: 1424610258
       vertices: []
       indices: 
       edges: []
@@ -122,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6014eaa2f1b3d2e48811dd880cec42be
+    spriteID: 0758ff4fc3c53c84ebfae66b5030fb40
     internalID: 0
     vertices: []
     indices: 
@@ -131,12 +153,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
-      - key: SpriteEditor.SliceOnImport
-        value: True
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Final Bom_0: 15717970
+      "Bot\xE3o Iniciar_0": -1030681780
+      "Bot\xE3o Iniciar_1": 2093113881
+      "Bot\xE3o Iniciar_2": 1424610258
+      "Bot\xE3o Iniciar_3": 756757702
+      "Bot\xE3o Iniciar_4": -484435168
+      "Bot\xE3o Iniciar_5": 1121200645
+      "Bot\xE3o Iniciar_6": 123492038
+      "Bot\xE3o Iniciar_7": -500398546
+      "Bot\xE3o Iniciar_8": 805350166
+      "Bot\xE3o Iniciar_9": -299631416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

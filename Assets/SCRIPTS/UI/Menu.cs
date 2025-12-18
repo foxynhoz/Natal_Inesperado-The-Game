@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] GameObject button;
     public void update()
     {
 
@@ -18,6 +19,18 @@ public class Menu : MonoBehaviour
     public void PlayGame(string Game)
     {
         SceneManager.LoadScene(Game);
+    }
+    public void CreditsButton()
+    {
+        if (button.gameObject.activeSelf)
+        {
+            button.SetActive(false);
+        }
+        else
+        {
+            button.SetActive(true);
+        }
+        
     }
 
 }

@@ -22883,6 +22883,18 @@ PrefabInstance:
       propertyPath: 'breachPointsList.Array.data[2]'
       value: 
       objectReference: {fileID: 1255789581}
+    - target: {fileID: 1550518861878342796, guid: ceb1b982dbb5e7946b01ca0649c7dae0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550518861878342796, guid: ceb1b982dbb5e7946b01ca0649c7dae0, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550518861878342796, guid: ceb1b982dbb5e7946b01ca0649c7dae0, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2600274742444684320, guid: ceb1b982dbb5e7946b01ca0649c7dae0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.0243416
