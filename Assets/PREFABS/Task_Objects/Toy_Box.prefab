@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 299024381148213434}
   - component: {fileID: 2443836166131510670}
   - component: {fileID: 4421816890386908409}
-  - component: {fileID: 5101558307618130954}
   - component: {fileID: 3465087672743972438}
   m_Layer: 0
   m_Name: Toy_Box
@@ -115,27 +114,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -9155085808603650068, guid: 9d415246983fbf94bb0047de2030df5e, type: 3}
---- !u!65 &5101558307618130954
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3298669323915681734}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.005000002, y: 0.0010907919, z: 0.005000002}
-  m_Center: {x: -0.000000001306489, y: -0.0050303526, z: -0.000000008642674}
 --- !u!114 &3465087672743972438
 MonoBehaviour:
   m_ObjectHideFlags: 0

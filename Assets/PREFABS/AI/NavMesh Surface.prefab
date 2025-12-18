@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 63
   m_UseGeometry: 0
   m_DefaultArea: 4
   m_GenerateLinks: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.07
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 32e58c288f34efe4ba55143efce6f75c, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: de5a6be452521a84aadc1189fef7ff76, type: 2}
   m_BuildHeightMesh: 0
 --- !u!114 &6795298203289689070
 MonoBehaviour:
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifierVolume
   m_SerializedVersion: 0
-  m_Size: {x: 9.225384, y: 3, z: 7.785928}
-  m_Center: {x: -2.6126919, y: 1, z: -11.950201}
+  m_Size: {x: 9.654541, y: 3, z: 7.785927}
+  m_Center: {x: -2.3981133, y: 1, z: -11.950201}
   m_Area: 3
   m_AffectedAgents: ffffffff

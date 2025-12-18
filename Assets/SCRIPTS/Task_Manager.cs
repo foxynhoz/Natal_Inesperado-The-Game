@@ -15,7 +15,7 @@ public class Task_Manager : MonoBehaviour
             remainingTrash--;
             remainingDishes--;
         }
-        if (remainingToys == 0 && remainingDishes == 0 && remainingTrash == 0) //Faz o jogo terminar
+        if (remainingToys == 0 && remainingTrash == 0) //Faz o jogo terminar
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

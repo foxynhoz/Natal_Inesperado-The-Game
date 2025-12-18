@@ -49,7 +49,7 @@ public class KrampusAI : MonoBehaviour
 
     void RoutineManager()
     {
-
+        StopAllCoroutines();
         agent.updateRotation = true;
 
         switch (NowState)
@@ -67,14 +67,15 @@ public class KrampusAI : MonoBehaviour
                 StartCoroutine(SearchingRoutine());
                 break;
             case AIstates.Retreating:
+                StartCoroutine(RetreatingRoutine());
                 break;
 
         }
     }
 
     IEnumerator LurkRoutine()
-    {  
-
+    {
+        agent.areaMask = OutsideMask;
         agent.SetDestination(new Vector3(Random.Range(35f, 59f),1.6f, Random.Range(-29f,3f))); //Mudar pra aleatorizar pontos escolhidos dentro da Navmesh
         yield return new WaitForSeconds(3f);
         yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance < 0.5f);
@@ -118,7 +119,7 @@ public class KrampusAI : MonoBehaviour
 
         NowState = AIstates.Searching;
         RoutineManager();
-        StopCoroutine(BreachingRoutine());
+        //StopCoroutine(BreachingRoutine());
     }
 
     IEnumerator SearchingRoutine()
@@ -127,23 +128,19 @@ public class KrampusAI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance < 0.5f);
         yield return new WaitForSeconds(3f);
-        RoutineManager();
-        StopCoroutine(SearchingRoutine());
 
-        /*
-        int rand = Random.Range(0, 6); Debug.Log(rand);
+        int rand = Random.Range(0, 3); Debug.Log(rand);
 
         switch (rand)
         {
             case 0:
-                NowState = AIstates.Breaching;
+                NowState = AIstates.Retreating;
                 RoutineManager();
                 break;
             default:
                 RoutineManager();
                 break;
         }
-        */
     }
 
     IEnumerator AttackingRoutine()
@@ -155,10 +152,23 @@ public class KrampusAI : MonoBehaviour
         }
         
         NowState = AIstates.Searching;
-        StopCoroutine(AttackingRoutine());
+        //StopCoroutine(AttackingRoutine());
         RoutineManager();
     }
 
+    IEnumerator RetreatingRoutine()
+    {
+        GameObject RetreatbreachPoint = breachPointsList[Random.Range(0, breachPointsList.Length)];
+        agent.SetDestination(RetreatbreachPoint.transform.position); Debug.Log("Indo ate" + RetreatbreachPoint.name);
+        yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance < 0.1f);
+        agent.updateRotation = false;
+        agent.transform.LookAt(RetreatbreachPoint.transform.position);
+        yield return new WaitForSeconds(1f);
+
+        NowState = AIstates.Lurking;
+        RoutineManager();
+        //StopCoroutine (RetreatingRoutine());
+    }
 
     private void OnTriggerEnter(Collider other) 
     {
@@ -166,7 +176,7 @@ public class KrampusAI : MonoBehaviour
             {
                 Debug.Log("Vendo Jogador");
                 NowState = AIstates.Attacking;
-                StopCoroutine(SearchingRoutine());
+                //StopCoroutine(SearchingRoutine());
                 RoutineManager();
             }
     }
