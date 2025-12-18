@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac4a19d8babc8545aa01a42d1cc7e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  remainingToys: 20
-  remainingTrash: 20
+  remainingToys: 23
+  remainingTrash: 16
   remainingDishes: 20

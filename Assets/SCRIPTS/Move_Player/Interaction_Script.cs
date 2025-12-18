@@ -54,6 +54,11 @@ public class Interaction_Script : MonoBehaviour
                     interactionText.text = "Hold [E] to grab";
                     interactionText.gameObject.SetActive(true);
                 }
+            if (hit.collider.CompareTag("HideSpot"))
+            {
+                interactionText.text = "PRESS [E] TO HIDE";
+                interactionText.gameObject.SetActive(true);
+            }
 
         }
             else

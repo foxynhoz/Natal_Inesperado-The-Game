@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Task_Manager : MonoBehaviour
 {
-    public int remainingToys = 20;
+    public int remainingToys = 23;
     public int remainingTrash = 20;
     public int remainingDishes = 20;
 

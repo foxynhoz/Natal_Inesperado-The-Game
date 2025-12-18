@@ -14,7 +14,9 @@ public class KrampusAI : MonoBehaviour
     int InsideMask, OutsideMask;
 
     [SerializeField] GameObject[] breachPointsList;
-
+    [SerializeField] Task_Manager Task_Manager;
+    
+    bool tutorial = true;
     bool isHidden;
     public enum AIstates
     {
@@ -30,13 +32,18 @@ public class KrampusAI : MonoBehaviour
         OutsideMask = 1 << NavMesh.GetAreaFromName("Outside");
 
         agent.areaMask = OutsideMask;
-        RoutineManager();
         isHidden = Camera.main.GetComponent<Interaction_Script>().isHidden;
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        if(Task_Manager.remainingToys == 20 && Task_Manager.remainingTrash == 15 && tutorial)
+        {
+            RoutineManager();
+            tutorial = false;
+        }
         if(Vector3.Distance(transform.position, Player.transform.position) < 1)
         {
             Cursor.lockState = CursorLockMode.None;
