@@ -20,44 +20,64 @@ public class Interaction_Script : MonoBehaviour
     {
         interactionText = UI.GetComponentInChildren<Text>(true);
     }
+
+
     void Update()
     {
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        RaycastHit hit;
+        if (Input.GetKeyUp(KeyCode.E))  //Pega ou solta coisas ou Interage com algo
+        {
 
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.blue);
-        
-
-            if (Physics.Raycast(ray, out hit, 1, interactableLayer) && heldOBJ == null)
+            if (heldOBJ != null)
             {
-                interactionText.text = "Press [E] to Interact";
-                interactionText.gameObject.SetActive(true);
+                Debug.Log("Soltou");
+                heldOBJ.transform.SetParent(null);
+                heldOBJ.GetComponent<Rigidbody>().isKinematic = false;
+                heldOBJ.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 3, ForceMode.Impulse);
+                heldOBJ = null;
             }
+        }
+
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+            RaycastHit hit;
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.blue);
+
+            if (Physics.Raycast(ray, out hit, 1.5f, interactableLayer) && heldOBJ == null)
+            {
+                if(hit.collider.CompareTag("Toys"))
+                {
+                interactionText.text = "Hold [E] to grab";
+                interactionText.gameObject.SetActive(true);
+                }
+
+                if (hit.collider.CompareTag("Trash"))
+                {
+                    interactionText.text = "Hold [E] to grab";
+                    interactionText.gameObject.SetActive(true);
+                }
+
+        }
             else
             {
                 interactionText.gameObject.SetActive(false);
                 interactionText.text = "";
             }
 
-
-        
-
         if (Input.GetKeyDown(KeyCode.E))  //Pega ou solta coisas ou Interage com algo
         {
 
-            if (heldOBJ != null) //Ja ta segurando algo
+            if (heldOBJ != null)
             {
                 Debug.Log("Soltou");
                 heldOBJ.transform.SetParent(null);
                 heldOBJ.GetComponent<Rigidbody>().isKinematic = false;
-                heldOBJ.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward*3,ForceMode.Impulse);
+                heldOBJ.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 3, ForceMode.Impulse);
                 heldOBJ = null;
             }
 
             if (heldOBJ == null) //Nao ta segurando nada
             {
 
-                if (Physics.Raycast(ray, out hit, range))
+                if (Physics.Raycast(ray, out hit, 1.5f))
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
@@ -83,25 +103,23 @@ public class Interaction_Script : MonoBehaviour
                         
                     }
 
-                    if (hit.collider.CompareTag("Toys")) //Task Pegar brinquedos
+                    if (hit.collider.CompareTag("Toys")) //Task Pratos
                     {
-                        if (heldOBJ == null)
-                        {
-                            Debug.Log("Segurou");
-                            heldOBJ = hit.collider.attachedRigidbody.gameObject;
-                            heldOBJ.transform.position = Hand.transform.position;
-                            heldOBJ.transform.SetParent(Hand.transform.parent, true);
-                            heldOBJ.GetComponent<Rigidbody>().isKinematic = true;
-                        }
-
+                        Debug.Log("Segurou");
+                        heldOBJ = hit.collider.attachedRigidbody.gameObject;
+                        heldOBJ.transform.position = Hand.transform.position;
+                        heldOBJ.transform.SetParent(Hand.transform.parent, true);
+                        heldOBJ.GetComponent<Rigidbody>().isKinematic = true;
                     }
-                    
+
+
                     if (hit.collider.CompareTag("Dishes")) //Task Jogar lixo no lixo
                     {
                         interactionText.gameObject.SetActive(true);
                         interactionText.text = "Cleaning Dishes...";
                     }
                     
+
                     if (hit.collider.CompareTag("Trash")) //Task Pratos
                     {
                         if (heldOBJ == null)
@@ -113,12 +131,6 @@ public class Interaction_Script : MonoBehaviour
                             heldOBJ.GetComponent<Rigidbody>().isKinematic = true;
                         }
                     }
-                    /*
-                    if (hit.collider.CompareTag("Door")) //Task Fechar porta
-                    {
-                        hit.collider.gameObject.SetActive(true);
-                    }
-                    */
                 }
             }
             
