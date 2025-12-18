@@ -12,6 +12,8 @@ public class KrampusAI : MonoBehaviour
     int InsideMask, OutsideMask;
 
     [SerializeField] GameObject[] breachPointsList;
+
+    bool isHidden;
     public enum AIstates
     {
         Lurking , Breaching , Attacking , Searching , Retreating
@@ -27,6 +29,7 @@ public class KrampusAI : MonoBehaviour
 
         agent.areaMask = OutsideMask;
         RoutineManager();
+        isHidden = Camera.main.GetComponent<Interaction_Script>().isHidden;
     }
 
     // Update is called once per frame
@@ -37,6 +40,7 @@ public class KrampusAI : MonoBehaviour
 
     void RoutineManager()
     {
+
         agent.updateRotation = true;
 
         switch (NowState)
@@ -48,7 +52,7 @@ public class KrampusAI : MonoBehaviour
                 StartCoroutine(BreachingRoutine());
                 break;
             case AIstates.Attacking:
-                agent.SetDestination(Player.transform.position);
+                StartCoroutine(AttackingRoutine());
                 break;
             case AIstates.Searching:
                 StartCoroutine(SearchingRoutine());
@@ -110,8 +114,8 @@ public class KrampusAI : MonoBehaviour
 
     IEnumerator SearchingRoutine()
     {
-        agent.SetDestination(new Vector3(Random.Range(55f, 40f), Random.Range(2, 5), Random.Range(-17f, -4f))); //Mudar pra aleatorizar pontos escolhidos dentro da Navmesh
-        yield return new WaitForSeconds(3f);
+        agent.SetDestination(new Vector3(Random.Range(55f, 40f), Random.Range(2, 5), Random.Range(-17f, -4f)));
+        yield return new WaitForSeconds(1f);
         yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance < 0.5f);
         yield return new WaitForSeconds(3f);
         RoutineManager();
@@ -131,6 +135,44 @@ public class KrampusAI : MonoBehaviour
                 break;
         }
         */
+    }
+
+    IEnumerator AttackingRoutine()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            agent.SetDestination(Player.transform.position);
+            yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance < 0.5f);
+        }
+        
+        NowState = AIstates.Searching;
+        StopCoroutine(AttackingRoutine());
+        RoutineManager();
+    }
+    private void OnTriggerEnter(Collider other) 
+    {
+            if(other.name == "Player" && NowState == AIstates.Searching && !isHidden)
+            {
+                Debug.Log("Vendo Jogador");
+                NowState = AIstates.Attacking;
+                StopCoroutine(SearchingRoutine());
+                RoutineManager();
+            }
+    }
+    public bool Raycasting2Player(Collider other)
+    {
+        Ray ray = new Ray(transform.localPosition, other.transform.localPosition);
+        RaycastHit hit;
+        Debug.DrawRay(transform.localPosition, other.transform.localPosition, Color.red);
+
+        if(Physics.Raycast(ray, out hit))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
     
