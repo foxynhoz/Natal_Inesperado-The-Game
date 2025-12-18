@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1471010456710299089}
   - component: {fileID: 3391025278635817244}
   - component: {fileID: 142521075088627570}
+  - component: {fileID: 2397462794695425898}
   - component: {fileID: 8128107988333215226}
   m_Layer: 0
   m_Name: Trash_Bin
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 39.513, y: 1.186, z: -7.756}
-  m_LocalScale: {x: 0.7006, y: 1.2728, z: 0.71486}
+  m_LocalScale: {x: 0.7686984, y: 1.1090293, z: 0.78434443}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5228470413786088352}
@@ -92,6 +93,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2397462794695425898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8094467575067208592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04f395dadeae8a4eae14340cad2d5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Toy_Box_Script
+  taskManager: {fileID: 0}
 --- !u!65 &8128107988333215226
 BoxCollider:
   m_ObjectHideFlags: 0
