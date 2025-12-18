@@ -13,7 +13,7 @@ public class TasksUI_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Task_Manager.remainingToys == 20 && Task_Manager.remainingTrash == 15 && flip)
+        if (Task_Manager.remainingToys <= 20 && Task_Manager.remainingTrash <= 15 && flip)
         {
             flip = false;
             StartCoroutine(GoodLuck());

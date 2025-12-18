@@ -6,7 +6,7 @@ public class TutorialScript : MonoBehaviour
 
     void Update()
     {
-        if(taskManager.remainingToys == 20 &&  taskManager.remainingTrash == 15)
+        if(taskManager.remainingToys <= 20 &&  taskManager.remainingTrash <= 15)
         {
             gameObject.SetActive(false);
         }
