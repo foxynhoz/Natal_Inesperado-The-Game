@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Waterfly
   productName: Naughty Boy
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 46b60e9b143e05b4c89c643b93c55820, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -344,7 +344,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 381f0aa7a0ace2246af1d5e118a35d3d, type: 3}
+      m_Icon: {fileID: 2800000, guid: 97d93a5ebddc245468b5fc3460d051b9, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
