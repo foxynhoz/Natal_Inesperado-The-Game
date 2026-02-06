@@ -35,6 +35,7 @@ public class Pause_Script : MonoBehaviour
     public void PauseFunc()
     {
         if (PauseMenu.activeSelf)
+
         {
             Cam.enabled = true;
             PlayerMove.enabled = true;
